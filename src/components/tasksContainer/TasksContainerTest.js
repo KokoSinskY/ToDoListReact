@@ -17,23 +17,9 @@ const useStyles = makeStyles({
   },
 });
 
-const TasksContainer = () => {
+const TasksContainerTest = () => {
   const classes = useStyles();
   return (
-    // <Grid2 container xs={5} spacing={1} direction="column" className={classes.tasksContainer}>
-    //   <Grid2>
-    //     <h3>Today</h3>
-    //     <Grid2 display="flex" justifyContent="flex-start" direction="column"></Grid2>
-    //   </Grid2>
-    //   <Grid2>
-    //     <h3>Tomorrow</h3>
-    //     <Grid2 container direction="column"></Grid2>
-    //   </Grid2>
-    //   <Grid2>
-    //     <h3>Upcoming</h3>
-    //     <Grid2 container direction="column"></Grid2>
-    //   </Grid2>
-    // </Grid2>
     <Grid container xs={12} md={4}>
       <Paper className={classes.paper}>
         <div>
@@ -61,4 +47,4 @@ const TasksContainer = () => {
   );
 };
 
-export default TasksContainer;
+export default TasksContainerTest;
