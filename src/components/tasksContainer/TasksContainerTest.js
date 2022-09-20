@@ -1,44 +1,29 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 
-const useStyles = makeStyles({
-  tasksContainer: {
-    backgroundColor: "#F9F9F9",
-    border: "2px solid black",
-    borderRadius: 20,
-    height: "80vh",
-    justifyContent: "space-around",
-  },
-  paper: {
-    textAlign: "left",
-  },
-});
-
 const TasksContainerTest = () => {
-  const classes = useStyles();
   return (
-    <Grid container xs={12} md={10}>
-      <Paper className={classes.paper}>
+    <Grid container xs={12} md={12}>
+      <Paper>
         <div>
           <Grid>
-            <Typography variant="h2">Today</Typography>
+            <Typography variant="h4">Today</Typography>
             <Grid>
-              <Typography variant="h3">Ugotowac obiad</Typography>
+              <Typography variant="h5">Ugotowac obiad</Typography>
             </Grid>
           </Grid>
           <Grid>
-            <Typography variant="h2">Tomorrow</Typography>
+            <Typography variant="h4">Tomorrow</Typography>
             <Grid>
-              <Typography variant="h3">Zrobic zakupy na impreze urodzinową</Typography>
+              <Typography variant="h5">Zrobic zakupy na impreze urodzinową</Typography>
             </Grid>
           </Grid>
           <Grid>
-            <Typography variant="h2">Upcoming</Typography>
+            <Typography variant="h4">Upcoming</Typography>
             <Grid>
-              <Typography variant="h3">Grill u gawrona</Typography>
+              <Typography variant="h5">Grill u gawrona</Typography>
             </Grid>
           </Grid>
         </div>

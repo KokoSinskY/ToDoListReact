@@ -1,20 +1,11 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import { makeStyles } from "@mui/styles";
-
-const useStyles = makeStyles({
-  header: {
-    backgroundColor: "#F9F9F9",
-    borderRadius: 50,
-  },
-});
 
 const Header = () => {
   const hour = new Date().getHours();
-  const classes = useStyles();
 
   return (
-    <Container maxWidth="sm" className={classes.header}>
+    <Container maxWidth="sm" sx={{ backgroundColor: "#F9F9F9", borderRadius: 50 }}>
       <h2>
         {hour <= 12
           ? "Good morning, "
