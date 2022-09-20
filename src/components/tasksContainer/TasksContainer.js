@@ -34,7 +34,7 @@ const TasksContainer = () => {
     //     <Grid2 container direction="column"></Grid2>
     //   </Grid2>
     // </Grid2>
-    <Grid container xs={12} md={4}>
+    <Grid container xs={12} md={6} lg={10}>
       <Paper className={classes.paper}>
         <div>
           <Grid>

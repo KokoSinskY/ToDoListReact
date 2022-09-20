@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 const TasksContainerTest = () => {
   const classes = useStyles();
   return (
-    <Grid container xs={12} md={4}>
+    <Grid container xs={12} md={10}>
       <Paper className={classes.paper}>
         <div>
           <Grid>

@@ -10,9 +10,13 @@ function App() {
     <div className="App">
       <Grid>
         <Header />
-        <Grid spacing={5} alignItems="center" justify="center" container>
-          <TasksContainer />
-          <TasksContainerTest />
+        <Grid container>
+          <Grid xs={12} md={6} lg={6}>
+            <TasksContainer />
+          </Grid>
+          <Grid xs={12} md={6} lg={6}>
+            <TasksContainerTest />
+          </Grid>
         </Grid>
       </Grid>
     </div>
