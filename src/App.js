@@ -1,9 +1,8 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import Grid from "@mui/material/Grid";
-import PaperContainer from "./components/PaperContainer/PaperContainer";
+import PaperContainer from "./components/MainContainer/MainContainer";
 import "@fontsource/roboto/700.css";
-import TasksContainerTest from "./components/PaperContainer/TasksContainerTest";
 import { CssBaseline } from "@mui/material";
 
 function App() {
@@ -11,9 +10,7 @@ function App() {
     <div className="App">
       <CssBaseline />
       <Header />
-      <PaperContainer>
-        <TasksContainerTest />
-      </PaperContainer>
+      <PaperContainer />
     </div>
   );
 }
