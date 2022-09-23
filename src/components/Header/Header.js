@@ -15,7 +15,7 @@ const Header = () => {
           ? "Good morning, "
           : hour > 12 && hour < 18
           ? "Good afternoon, "
-          : "Good evening, Chuju"}
+          : "Good evening, "}
       </Typography>
     </Container>
   );
