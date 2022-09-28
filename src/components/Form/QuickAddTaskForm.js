@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
@@ -6,21 +6,37 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import { useForm, Controller } from "react-hook-form";
 
-const TasksContainerContent = () => {
-  const [tasks, setTasks] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/api/task/create")
-      .then((response) => response.json())
-      .then((data) => setTasks(data));
-  }, []);
-
-  const { control, handleSubmit } = useForm({
+const QuickAddTaskForm = () => {
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState,
+    formState: { isSubmitSuccessful },
+  } = useForm({
     defaultValues: {
       task: "",
     },
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      await fetch("http://localhost:3000/api/task/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ task: "" });
+    }
+  }, [formState, reset]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -52,4 +68,4 @@ const TasksContainerContent = () => {
   );
 };
 
-export default TasksContainerContent;
+export default QuickAddTaskForm;

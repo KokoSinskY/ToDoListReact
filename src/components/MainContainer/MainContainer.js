@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import TasksContainer from "../TasksContainer/TasksContainer";
 
-const PaperContainer = () => {
+const MainContainer = () => {
   return (
     <Container maxWidth="xl" component="main">
       <Grid container spacing={20}>
@@ -18,4 +18,4 @@ const PaperContainer = () => {
   );
 };
 
-export default PaperContainer;
+export default MainContainer;

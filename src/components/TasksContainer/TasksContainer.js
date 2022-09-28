@@ -1,6 +1,6 @@
 import { Paper } from "@mui/material";
 import React from "react";
-import TasksContainerContent from "../TasksContainerContent/TasksContainerContent";
+import QuickAddTaskForm from "../Form/QuickAddTaskForm";
 
 const TasksContainer = () => {
   return (
@@ -14,7 +14,7 @@ const TasksContainer = () => {
         justifyContent: "flex-end",
       }}
     >
-      <TasksContainerContent />
+      <QuickAddTaskForm />
     </Paper>
   );
 };
