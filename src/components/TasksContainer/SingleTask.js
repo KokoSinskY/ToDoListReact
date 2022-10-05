@@ -1,25 +1,11 @@
 import React from "react";
 
-const data = [
-  {
-    title: "jazdunia",
-  },
-  {
-    title: "drugi task",
-  },
-  {
-    title: "trzecie zadanko do zrobienia",
-  },
-  {
-    title: "i kolejny task",
-  },
-  {
-    title: "jeszcze następne zadanko dla Ciebie",
-  },
-];
-
-const SingleTask = () => {
-  return <li>{data.title}</li>;
+const SingleTask = (props) => {
+  return (
+    <li>
+      <p>{props.task.title}</p>
+    </li>
+  );
 };
 
 export default SingleTask;

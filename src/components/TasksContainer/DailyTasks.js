@@ -1,9 +1,18 @@
 import { Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SingleTask from "./SingleTask";
-import data from "./SingleTask";
 
 const DailyTasks = (props) => {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch("http://localhost:3002/task/list");
+      const data = await res.json();
+      setTasks(data);
+    })();
+  }, []);
+
   return (
     <>
       <Grid
@@ -34,7 +43,11 @@ const DailyTasks = (props) => {
         }}
       >
         <Typography variant="subtitle2" sx={{ px: 1.5 }}>
-          <ul></ul>
+          <ul>
+            {tasks.map((task) => (
+              <SingleTask task={task} />
+            ))}
+          </ul>
         </Typography>
       </Grid>
     </>

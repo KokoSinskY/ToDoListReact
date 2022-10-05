@@ -20,7 +20,7 @@ const QuickAddTaskForm = () => {
   });
   const onSubmit = async (data) => {
     try {
-      await fetch("http://localhost:3000/api/task/create", {
+      await fetch("http://localhost:3002/task/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,10 @@ const QuickAddTaskForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Grid container sx={{ boxShadow: "0px 0px 15px rgba(50, 50, 50, 0.75)", pt: 1 }}>
+      <Grid
+        container
+        sx={{ boxShadow: "0px 0px 15px rgba(50, 50, 50, 0.75)", pt: 1, borderBottomRadius: 5 }}
+      >
         <Grid item md={10} sm={10} xs={8}>
           <Controller
             name="task"
@@ -48,11 +51,13 @@ const QuickAddTaskForm = () => {
             render={({ field }) => (
               <TextField
                 {...field}
+                name="title"
                 id="filled-search"
                 label="Quickly add a task"
                 type="text"
                 variant="standard"
                 fullWidth
+                autoComplete="off"
                 sx={{ mx: 1, my: 1 }}
               />
             )}
