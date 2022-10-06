@@ -19,6 +19,7 @@ const QuickAddTaskForm = () => {
     },
   });
   const onSubmit = async (data) => {
+    console.log(data)
     try {
       await fetch("http://localhost:3002/task/create", {
         method: "POST",
@@ -46,12 +47,12 @@ const QuickAddTaskForm = () => {
       >
         <Grid item md={10} sm={10} xs={8}>
           <Controller
-            name="task"
+            name="title" // <------ w tym miejscu poprawnie zczytuje dane, pobiera wartośc inputa. To tu trzeba ustawiać nazwe inputa
             control={control}
             render={({ field }) => (
               <TextField
                 {...field}
-                name="title"
+                // name="title" // @@@@<------ to nalezy wywalic, nie można tutaj ustawiac nazwy inputa
                 id="filled-search"
                 label="Quickly add a task"
                 type="text"
