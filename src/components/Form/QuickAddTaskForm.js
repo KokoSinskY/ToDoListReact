@@ -21,13 +21,17 @@ const QuickAddTaskForm = () => {
   const onSubmit = async (data) => {
     console.log(data)
     try {
-      await fetch("http://localhost:3002/task/create", {
+      const res = await fetch("http://localhost:3002/task/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
+      return res.json().then((data) => {  //      <--- w ten sposob dostajemy sie do obiektu ZWROTNEGO z backendu
+        console.log(data.message)         //      <--- wyswietlamy go i odnosimy sie konkretnie do wiadomosci.
+        return data                       //      <---- w naszym przypadku jest to .message bo tak ustawiłem ale zawsze polecam ustawic console.log(data) aby zobaczyc czym jest i jak wyglada ten obiekt data
+      })
     } catch (error) {
       console.log(error);
     }
