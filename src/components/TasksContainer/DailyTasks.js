@@ -5,13 +5,13 @@ import SingleTask from "./SingleTask";
 const DailyTasks = (props) => {
   const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("http://localhost:3002/task/list");
-      const data = await res.json();
-      setTasks(data);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await fetch("http://localhost:3002/task/list");
+  //     const data = await res.json();
+  //     setTasks(data);
+  //   })();
+  // }, []);
 
   return (
     <>
@@ -31,16 +31,20 @@ const DailyTasks = (props) => {
       </Grid>
       <Grid
         container
-        sx={{
-          py: 0.5,
-          mx: 1,
-          width: "97%",
-          "&:hover": {
-            borderRadius: 3,
-            backgroundColor: "gray",
-          },
-          transition: "0.3s",
-        }}
+        sx={
+          tasks.length === 0
+            ? { py: 0.5, mx: 1, width: "97%" }
+            : {
+                py: 0.5,
+                mx: 1,
+                width: "97%",
+                "&:hover": {
+                  borderRadius: 3,
+                  backgroundColor: "gray",
+                },
+                transition: "0.3s",
+              }
+        }
       >
         <Typography variant="subtitle2" sx={{ px: 1.5 }}>
           <ul>

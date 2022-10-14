@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-
 import { useForm, Controller } from "react-hook-form";
 
 const QuickAddTaskForm = () => {
@@ -19,7 +18,7 @@ const QuickAddTaskForm = () => {
     },
   });
   const onSubmit = async (data) => {
-    console.log(data)
+    console.log(data);
     try {
       const res = await fetch("http://localhost:3002/task/create", {
         method: "POST",
@@ -28,10 +27,11 @@ const QuickAddTaskForm = () => {
         },
         body: JSON.stringify(data),
       });
-      return res.json().then((data) => {  //      <--- w ten sposob dostajemy sie do obiektu ZWROTNEGO z backendu
-        console.log(data.message)         //      <--- wyswietlamy go i odnosimy sie konkretnie do wiadomosci.
-        return data                       //      <---- w naszym przypadku jest to .message bo tak ustawiłem ale zawsze polecam ustawic console.log(data) aby zobaczyc czym jest i jak wyglada ten obiekt data
-      })
+      return res.json().then((data) => {
+        //      <--- w ten sposob dostajemy sie do obiektu ZWROTNEGO z backendu
+        console.log(data.message); //      <--- wyswietlamy go i odnosimy sie konkretnie do wiadomosci.
+        return data; //      <---- w naszym przypadku jest to .message bo tak ustawiłem ale zawsze polecam ustawic console.log(data) aby zobaczyc czym jest i jak wyglada ten obiekt data
+      });
     } catch (error) {
       console.log(error);
     }
